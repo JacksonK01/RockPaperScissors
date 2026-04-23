@@ -8,7 +8,7 @@ public class Rock implements Item {
 
     @Override
     public int getThickness() {
-        return 1;
+        return 2;
     }
 
     @Override

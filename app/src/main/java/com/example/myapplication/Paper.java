@@ -8,7 +8,7 @@ public class Paper implements Item {
 
     @Override
     public int getThickness() {
-        return 1;
+        return 0;
     }
 
     @Override
