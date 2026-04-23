@@ -11,7 +11,7 @@ public class BehaviorTests {
         Item paper = new Paper();
 
         assertTrue(paper.getWeight() < rock.getWeight());
-        assertFalse(paper.getWeight() < rock.getWeight());
+        assertFalse(paper.getWeight() > rock.getWeight());
     }
 
     @Test
