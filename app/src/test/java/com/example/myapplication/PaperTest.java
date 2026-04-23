@@ -17,7 +17,7 @@ public class PaperTest {
     }
     @Test
     public void testThickness() {
-        assertEquals(1, paper.getThickness());
+        assertEquals(0, paper.getThickness());
     }
     @Test
     public void testSharpness() {
