@@ -13,7 +13,7 @@ public class Paper implements Item {
 
     @Override
     public int getSharpness() {
-        return 0;
+        return 2;
     }
 
     @Override

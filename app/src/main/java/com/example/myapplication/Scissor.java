@@ -3,7 +3,7 @@ package com.example.myapplication;
 public class Scissor implements Item {
     @Override
     public int getWeight() {
-        return 0;
+        return 1;
     }
 
     @Override
