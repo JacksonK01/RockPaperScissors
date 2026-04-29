@@ -33,28 +33,28 @@ public class MainActivity extends AppCompatActivity {
 
         subject = new GameSubject();
 
-        // Paper beats Rock
-        subject.registerObserver(game -> {
-            if (game.getItem1() instanceof Paper && game.getItem2() instanceof Rock)
-                game.setP1Score(game.getP1Score() + 1);
-            else if (game.getItem1() instanceof Rock && game.getItem2() instanceof Paper)
-                game.setP2Score(game.getP2Score() + 1);
+        subject.registerObserver((game) -> {
+            Item item1 = game.getItem1();
+            Item item2 = game.getItem2();
+            if (item1 instanceof Paper && item2 instanceof Rock) {
+                game.setWinner(item1.getName());
+            }
         });
 
-        // Rock beats Scissors
-        subject.registerObserver(game -> {
-            if (game.getItem1() instanceof Rock && game.getItem2() instanceof Scissor)
-                game.setP1Score(game.getP1Score() + 1);
-            else if (game.getItem1() instanceof Scissor && game.getItem2() instanceof Rock)
-                game.setP2Score(game.getP2Score() + 1);
+        subject.registerObserver((game) -> {
+            Item item1 = game.getItem1();
+            Item item2 = game.getItem2();
+            if (item1 instanceof Scissor && item2 instanceof Paper) {
+                game.setWinner(item1.getName());
+            }
         });
 
-        // Scissors beats Paper
-        subject.registerObserver(game -> {
-            if (game.getItem1() instanceof Scissor && game.getItem2() instanceof Paper)
-                game.setP1Score(game.getP1Score() + 1);
-            else if (game.getItem1() instanceof Paper && game.getItem2() instanceof Scissor)
-                game.setP2Score(game.getP2Score() + 1);
+        subject.registerObserver((game) -> {
+            Item item1 = game.getItem1();
+            Item item2 = game.getItem2();
+            if (item1 instanceof Rock && item2 instanceof Scissor) {
+                game.setWinner(item1.getName());
+            }
         });
 
         // Set up spinner
@@ -85,9 +85,16 @@ public class MainActivity extends AppCompatActivity {
             subject.notifyObservers();
 
             String result;
-            if      (game.getP1Score() > game.getP2Score()) result = "You win!";
-            else if (game.getP2Score() > game.getP1Score()) result = "CPU wins!";
-            else                                             result = "It's a draw!";
+            String winner = game.getWinner();
+            if (winner.equals(userItem.getName())) {
+                result = "You win!";
+            }
+            else if (winner.equals(cpuItem.getName())) {
+                result = "CPU wins!";
+            }
+            else {
+                result = "It's a draw!";
+            }
 
             resultText.setText("You: " + userItem.getName()
                     + " | CPU: " + cpuItem.getName()

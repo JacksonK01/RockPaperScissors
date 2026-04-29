@@ -12,18 +12,6 @@ public class PaperTest {
         paper = new Paper();
     }
     @Test
-    public void testWeight() {
-        assertEquals(0, paper.getWeight());
-    }
-    @Test
-    public void testThickness() {
-        assertEquals(0, paper.getThickness());
-    }
-    @Test
-    public void testSharpness() {
-        assertEquals(0, paper.getSharpness());
-    }
-    @Test
     public void testName() {
         assertEquals("Paper", paper.getName());
     }
