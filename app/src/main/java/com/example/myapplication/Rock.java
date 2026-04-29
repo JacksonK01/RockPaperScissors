@@ -5,4 +5,9 @@ public class Rock implements Item {
     public String getName() {
         return "Rock";
     }
+
+    @Override
+    public String toString() {
+        return this.getName();
+    }
 }

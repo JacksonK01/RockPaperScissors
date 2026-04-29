@@ -5,4 +5,9 @@ public class Scissor implements Item {
     public String getName() {
         return "Scissor";
     }
+
+    @Override
+    public String toString() {
+        return this.getName();
+    }
 }

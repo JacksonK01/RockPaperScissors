@@ -17,4 +17,7 @@ public class RandomStrategy implements Strategy{
             return new Rock();
         }
     }
+
+    @Override
+    public void afterTurn(Item otherPlayer) {}
 }

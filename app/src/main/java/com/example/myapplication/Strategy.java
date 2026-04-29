@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
 public interface Strategy {
-    public Item getItem();
+    Item getItem();
+    void afterTurn(Item otherPlayer);
 }
