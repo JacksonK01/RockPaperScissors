@@ -18,7 +18,7 @@ public class GameSubject implements Subject<Game> {
 
     @Override
     public void removeObserver(Observer<Game> o) {
-        observers.add(o);
+        observers.remove(o);
     }
 
     @Override
