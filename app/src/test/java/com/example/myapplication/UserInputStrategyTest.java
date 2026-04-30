@@ -5,30 +5,28 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class UserInputStrategyTest {
-    Item testInput;
 
-    //Tests getItem for user input of a rock
+    //Tests if this strategy returns right item when a user previously selected a rock
     @Test
     public void testUserInputRock(){
-        Item testInput = new Rock();
-        UserInputStrategy testStrategy = new UserInputStrategy(testInput);
+        UserInputStrategy testStrategy = new UserInputStrategy();
+        testStrategy.afterTurn(new Rock());
         assertTrue(testStrategy.getItem() instanceof Rock);
     }
 
-    //Tests getItem for user input of paper
+    //Tests if this strategy returns right item when a user previously selected paper
     @Test
     public void testUserInputPaper(){
-        Item testInput = new Paper();
-        UserInputStrategy testStrategy = new UserInputStrategy(testInput);
+        UserInputStrategy testStrategy = new UserInputStrategy();
+        testStrategy.afterTurn(new Paper());
         assertTrue(testStrategy.getItem() instanceof Paper);
     }
 
-    //Tests getItem for user input of scissors
+    //Tests if this strategy returns right item when a user previously selected scissors
     @Test
     public void testUserInputScissor(){
-        Item testInput = new Scissor();
-        UserInputStrategy testStrategy = new UserInputStrategy(testInput);
+        UserInputStrategy testStrategy = new UserInputStrategy();
+        testStrategy.afterTurn(new Scissor());
         assertTrue(testStrategy.getItem() instanceof Scissor);
     }
-
 }
